@@ -1,25 +1,28 @@
 <?php
-require_once ('Bicycle.php');
-require_once ('Car.php');
 
-$bike = new Bicycle();
+require_once ('Truck.php');
 
+$camion = new Truck('black', 4, 150, 'fuel' );
+var_dump($camion);
 
-$bike->setColor('blue');
-$bike->setCurrentSpeed(0);
+$camion->setLoadStatus(149);
+var_dump($camion);
 
+$camion->getLoadStatus();
 
-echo $bike->forward();
-echo '<br> Vitesse du vélo : ' . $bike->getCurrentSpeed() . ' km/h' . '<br>';
-echo $bike->brake();
-echo '<br> Vitesse du vélo : ' . $bike->getCurrentSpeed() . ' km/h' . '<br>';
-echo $bike->brake();
+echo $camion->forward();
+echo '<br> Vitesse du camion : ' . $camion->getCurrentSpeed() . ' km/h' . '<br>';
+echo $camion->brake();
+echo '<br> Vitesse du camion : ' . $camion->getCurrentSpeed() . ' km/h' . '<br>';
+echo $camion->brake();
+echo '<br> Le camion est ' . $camion->getLoadStatus() . ' !' . '<br>';
 
-$clio = new Car('black', 4, 'diesel');
+echo '<br>';
 
-echo '<br><br>';
-echo $clio->forward();
-echo '<br> Vitesse de la voiture : ' . $clio->getCurrentSpeed() . ' km/h' . '<br>';
-echo $clio->brake();
-echo '<br> Vitesse de la voiture : ' . $clio->getCurrentSpeed() . ' km/h' . '<br>';
-echo $clio->brake();
+$camion->setLoadStatus(150);
+echo $camion->forward();
+echo '<br> Vitesse du camion : ' . $camion->getCurrentSpeed() . ' km/h' . '<br>';
+echo $camion->brake();
+echo '<br> Vitesse du camion : ' . $camion->getCurrentSpeed() . ' km/h' . '<br>';
+echo $camion->brake();
+echo '<br> Le camion est ' . $camion->getLoadStatus() . ' !' . '<br>';
